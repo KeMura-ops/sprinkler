@@ -29,7 +29,7 @@
   <body>
     <div id="wrapper">
       <%# ログインアラートの表示 %>
-      <%= render 'partial/navbar' if current_user %>
+      <%= render 'partial/navbar' %>
 
       <% if flash[:notice] %>
         <div class="alert alert-info">
