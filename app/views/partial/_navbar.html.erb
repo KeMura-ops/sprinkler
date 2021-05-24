@@ -1,7 +1,12 @@
 <header class="navbar">
   <div class="navbar-brand">
     <span class="navbar-item">
-      <span class="fas fa-umbrella"></span><%= link_to "Sprinkler", user_path(current_user) %>
+      <span class="fas fa-umbrella"></span>
+      <% if user_signed_in? %>
+        <%= link_to "Sprinkler", user_path(current_user) %>
+      <% else %>
+        <%= link_to "Sprinkler", new_user_session_path %>
+      <% end %>
     </span>
     <div class="navbar-item">
       <div class="field has-addons">
