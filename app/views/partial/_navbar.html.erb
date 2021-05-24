@@ -1,7 +1,7 @@
 <header class="navbar">
   <div class="navbar-brand">
     <span class="navbar-item">
-      <span class="fas fa-umbrella"></span>Sprinkler
+      <span class="fas fa-umbrella"></span><%= link_to "Sprinkler", user_path(current_user) %>
     </span>
     <div class="navbar-item">
       <div class="field has-addons">
@@ -18,7 +18,7 @@
     <% if user_signed_in? %>
       <div class="navbar-item">
         <div class="columns">
-          <div class="columns">
+          <div class="column">
             <%= link_to "作品を投稿する", new_post_path, class: "button" %>
             <%= link_to "マイページ", user_path(current_user) %>
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
