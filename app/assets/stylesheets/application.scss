@@ -14,7 +14,26 @@
  *= require_self
  */
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 .c{
   height: 500px;
   width :100%;
+}
+
+.footer_container {
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.item-contents {
+  display: flex;
+}
+
+.item-content {
+  margin-left: 5px;
 }

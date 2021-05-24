@@ -9,27 +9,17 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%# Slick.jsのCDN %>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <%# BULMAとFont Awesomeの導入 %>
-    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" defer ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-
-    <%# Bootstrapのハンバーガーメニューが動作しないため以下のCDNを追記 %>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
     <div id="wrapper">
       <%# ログインアラートの表示 %>
-      <%= render 'partial/navbar' if current_user %>
+      <%= render 'partial/navbar' %>
 
       <% if flash[:notice] %>
         <div class="alert alert-info">
@@ -44,7 +34,7 @@
       <%# ここまで %>
 
       <%= yield %>
-
+      <%= render 'partial/footer' %>
     </div>
   </body>
 </html>

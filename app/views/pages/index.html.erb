@@ -1,8 +1,4 @@
 <p>このページは仮のトップページです。</p>
-<%= link_to "写真を投稿する", new_post_path, class: "button" %>
-<%= link_to 'ログイン', new_user_session_path %>
-<%= link_to '新規登録', new_user_registration_path %>
-<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 <%= link_to '画像一覧', posts_path, method: :get %>
 <% User.all.each do |user| %>
   <%= link_to user.nickname, [user], method: :get %>
