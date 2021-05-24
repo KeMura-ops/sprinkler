@@ -1,6 +1,3 @@
-// import 'bootstrap';
-// import '../stylesheets/application';
-
 //= require jquery
 //= require rails-ujs
 
