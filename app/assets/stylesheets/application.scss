@@ -23,7 +23,8 @@
 }
 
 .footer_container {
-  height: 40px;
+  background-color: #ffb6c1;
+  height: 30px;
   width: 100%;
   position: fixed;
   left: 0;
@@ -36,4 +37,16 @@
 
 .item-content {
   margin-left: 5px;
+}
+
+.copy-right {
+  color: #8a2be2;
+}
+
+.git-hub {
+  color: #8a2be2;
+}
+
+.note {
+  color: #8a2be2;
 }
