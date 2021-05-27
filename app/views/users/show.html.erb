@@ -56,7 +56,7 @@
     <%= link_to 'フォロワー',  [@user, :followers] %>
   </div>
 
-  <% @user.posts.each do |post| %>
+  <% @user.posts.reverse_each do |post| %> <%# reverse_eachで新しい投稿から取得する %>
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">

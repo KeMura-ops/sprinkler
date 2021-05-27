@@ -27,6 +27,15 @@
           </p>
           <p class="subtitle is-6"><%= post.user.email %></p>
         </div>
+        <% if user_signed_in? %>
+          <div class="media-right">
+            <% if post.user_id == current_user.id %>
+              <%= link_to post_path(post), method: :delete, class: "trash" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
 
       <div class="content">

@@ -9,7 +9,6 @@
             <%= form_with model: @post, url: posts_path, class: "upload-images p-0 border-0", local: true do |f| %>
               <div class="form-group row mt-2">
                 <div class="col-auto pr-0">
-                  <%= image_tag "profile.png", class: "post-profile-icon" %>
                 </div>
                 <div class="col pl-0">
                   <%= f.text_field :text, class: "form-control border-0", placeholder: "テキストを書く(空でも投稿可)" %>
