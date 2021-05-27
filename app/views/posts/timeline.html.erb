@@ -36,6 +36,11 @@
       </div>
 
       <div class="content">
+      <% if current_user.niced_by?(post.id) %>
+        <td>いいねを外す</td>
+      <% else %>
+        <td>いいね</td>
+      <% end %>
         <%= post.text %>
         <%post.tags.each do |tag| %>
            #<%=tag.name%>
