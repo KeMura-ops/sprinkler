@@ -27,4 +27,8 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+
+  def niced_by?(post_id)
+    nices.where(post_id: post_id).exists?
+  end
 end

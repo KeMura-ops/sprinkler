@@ -1,5 +1,4 @@
-<h3>投稿一覧</h3>
-<%= link_to "New Post", new_post_path, class:"post-btn"%>
+<h1>タイムライン</h1>
 
 <% @posts.each do |post| %>
   <div class="card">
@@ -27,18 +26,21 @@
           </p>
           <p class="subtitle is-6"><%= post.user.email %></p>
         </div>
-        <% if user_signed_in? %>
-          <div class="media-right">
-            <% if post.user_id == current_user.id %>
-              <%= link_to post_path(post), method: :delete, class: "trash" do %>
-                <i class="fas fa-trash-alt"></i>
-              <% end %>
+        <div class="media-right">
+          <% if post.user_id == current_user.id %>
+            <%= link_to post_path(post), method: :delete, class: "trash" do %>
+              <i class="fas fa-trash-alt"></i>
             <% end %>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
 
       <div class="content">
+      <% if current_user.niced_by?(post.id) %>
+        <td>いいねを外す</td>
+      <% else %>
+        <td>いいね</td>
+      <% end %>
         <%= post.text %>
         <%post.tags.each do |tag| %>
            #<%=tag.name%>

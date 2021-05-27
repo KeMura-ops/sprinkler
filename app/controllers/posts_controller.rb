@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @posts = Post.includes(:tags).limit(10).order(created_at: :desc)
+  end
+
+  def timeline # 自分自身とフォローしているユーザーの投稿を取得する
+    @posts = Post.includes(:tags).where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc)
   end
 
   def search
@@ -19,7 +23,7 @@ class PostsController < ApplicationController
     @post = PostsTag.new(post_params)
     if @post.valid?
       @post.save
-      redirect_to root_path
+      redirect_to timeline_posts_path
       flash[:notice] = "投稿が保存されました"
     else
       render :new
@@ -38,7 +42,7 @@ class PostsController < ApplicationController
     else
       flash[:alert] = "投稿の削除に失敗しました"
     end
-    redirect_to root_path
+    redirect_to user_path(current_user.id)
   end
 
   private
