@@ -1,5 +1,4 @@
-<h3>投稿一覧</h3>
-<%= link_to "New Post", new_post_path, class:"post-btn"%>
+<h1>タイムライン</h1>
 
 <% @posts.each do |post| %>
   <div class="card">
@@ -26,6 +25,13 @@
             <% end %>
           </p>
           <p class="subtitle is-6"><%= post.user.email %></p>
+          <div class="media-right">
+          <% if post.user_id == current_user.id %>
+            <%= link_to post_path(post), method: :delete, class: "trash" do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          <% end %>
+        </div>
         </div>
       </div>
 

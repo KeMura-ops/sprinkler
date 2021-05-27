@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @posts = Post.includes(:tags).limit(10).order(created_at: :desc)
+  end
+
+  def timeline
+    @posts = Post.includes(:tags).where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc)
   end
 
   def search

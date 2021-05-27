@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    get :timeline, on: :collection
   end
 
   resources :users do
