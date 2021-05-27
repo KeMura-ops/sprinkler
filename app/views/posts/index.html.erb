@@ -1,60 +1,51 @@
-<div class="container">
-  <h3>タイムライン</h3>
-  <%= link_to "New Post", new_post_path, class:"post-btn"%>
+<h3>タイムライン</h3>
+<%= link_to "New Post", new_post_path, class:"post-btn"%>
 
-  <% @posts.each do |post|%>
-    <div class="col-md-8 col-md-2 mx-auto">
-      <div class="card-wrap">
-        <div class="card">
-          <div class="card-header align-items-center d-flex">
-            <%= link_to user_path(post.user), class: "no-text-decoration" do %>
-              <%= image_tag "profile.png", class: "post-profile-icon" %>
+<% @posts.each do |post| %>
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <%= link_to(post_path(post)) do %>
+          <%= image_tag post.image.variant(resize: '500x500'), class: "card-img-top" if post.image.attached? %>
+        <% end %>
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <%= link_to user_path(post.user) do %>
+              <%= image_tag "profile.png" %>
             <% end %>
-            <%= link_to user_path(post.user), class: "black-color no-text-decoration",
-              title: post.user.nickname do %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">
+            <%= link_to user_path(post.user),　title: post.user.nickname do %>
               <strong><%= post.user.nickname %></strong>
             <% end %>
-
-            <% if post.user_id == current_user.id %>
-            <%= link_to post_path(post), method: :delete, class: "ml-auto mx-0 my-auto" do %>
+          </p>
+          <p class="subtitle is-6"><%= post.user.email %></p>
+        </div>
+        <div class="media-right">
+          <% if post.user_id == current_user.id %>
+            <%= link_to post_path(post), method: :delete, class: "trash" do %>
               <i class="fas fa-trash-alt"></i>
-              </div>
             <% end %>
           <% end %>
-          </div>
-
-          <%= link_to(post_path(post)) do %>
-            <%= image_tag post.image.variant(resize: '1080x1080'), class: "card-img-top" if post.image.attached? %>
-          <% end %>
-
-          <div class="card-body">
-            <div class="row parts">
-            <div id="like-icon-post-<%= post.id.to_s %>">
-              <%= link_to "", "#", class: "love" %>
-              <%= link_to "", "#", class: "comment" %>
-            </div>
-            <div><strong>「いいね！」10件</strong></div>
-          </div>
-          <div>
-            <span><strong><%= post.user.nickname %></strong></span>
-            <span><%= post.text %></span>
-            <span>
-              <%post.tags.each do |tag| %>
-                #<%=tag.name%>
-              <% end %>
-            </span>
-            <%= link_to time_ago_in_words(post.created_at).upcase + "前", "#", class: "post-time no-text-decoration" %>
-            <hr>
-            <div class="row parts">
-              <form action="#" class="w-100">
-                <div>
-                  <textarea class="form-control comment-input border-0" placeholder="コメント..." rows="1"></textarea>
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
       </div>
+
+      <div class="content">
+        <%= post.text %>
+        <%post.tags.each do |tag| %>
+           #<%=tag.name%>
+        <% end %>
+        <br>
+        <time>
+          <%= link_to time_ago_in_words(post.created_at).upcase + "前", "#" %>
+        </time>
+      </div>
     </div>
-  <%end%>
-</div>
+  </div>
+<% end %>
