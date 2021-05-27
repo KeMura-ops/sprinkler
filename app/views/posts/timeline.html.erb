@@ -36,11 +36,12 @@
       </div>
 
       <div class="content">
-      <% if current_user.niced_by?(post.id) %>
-        <td>いいねを外す</td>
-      <% else %>
-        <td>いいね</td>
-      <% end %>
+        <% if current_user.niced_by?(post.id) %>
+          <td><%= link_to 'ステキを外す', destroy_nice_path(post), method: :delete %></td>
+        <% else %>
+          <td><%= link_to 'ステキ', create_nice_path(post), method: :post %></td>
+        <% end %>
+        <br>
         <%= post.text %>
         <%post.tags.each do |tag| %>
            #<%=tag.name%>
