@@ -37,9 +37,9 @@
 
       <div class="content">
         <% if current_user.niced_by?(post.id) %>
-          <td><%= link_to 'ステキを外す', destroy_nice_path(post), method: :delete %></td>
+          <td><%= link_to 'ステキを外す', destroy_nice_path(post), method: :delete %> <%= post.nices.count %></td>
         <% else %>
-          <td><%= link_to 'ステキ', create_nice_path(post), method: :post %></td>
+          <td><%= link_to 'ステキ', create_nice_path(post), method: :post %> <%= post.nices.count %></td>
         <% end %>
         <br>
         <%= post.text %>
