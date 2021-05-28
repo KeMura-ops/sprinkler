@@ -1,1 +1,1 @@
-document.getElementById("nice_<%= @post.id %>").inner.HTML("<%= j(render partial: "nices/nice", locals: {post: @post}) %>");
+document.getElementById("nice_<%= @post.id %>").innerHTML = ("<%= j(render partial: "nices/nice", locals: {post: @post}) %>");
