@@ -17,4 +17,7 @@ Rails.application.routes.draw do
     resources :followings
     resources :followers
   end
+
+  post 'nice/:id' => 'nices#create', as: 'create_nice'
+  delete 'nice/:id' => 'nices#destroy', as: 'destroy_nice'
 end

@@ -1,3 +1,22 @@
 // Place all the styles related to the nices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.nice-link {
+  text-decoration: none;
+}
+
+.nice-link:hover {
+  background-color: #fff!important;
+}
+
+.nice-btn {
+  font-size: 15px;
+  color: #808080;
+}
+
+
+.unnice-btn {
+  font-size: 15px;
+  color: rgb(255, 187, 0);
+}

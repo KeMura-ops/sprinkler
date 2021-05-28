@@ -36,13 +36,24 @@
       </div>
 
       <div class="content">
-      <% if current_user.niced_by?(post.id) %>
-        <td>いいねを外す</td>
-      <% else %>
-        <td>いいね</td>
-      <% end %>
+        <% if current_user.niced_by?(post.id) %>
+          <td>
+            <%= link_to destroy_nice_path(post), class: "nice-link", method: :DELETE do %>
+              <i class="fas fa-star unnice-btn"></i>
+          <% end %>
+          <%= post.nices.count %>
+          </td>
+        <% else %>
+          <td>
+            <%= link_to create_nice_path(post), class: "nice-link", method: :POST do %>
+                <i class="far fa-star nice-btn"></i>
+          <% end %>
+          <%= post.nices.count %>
+          </td>
+        <% end %>
+        <br>
         <%= post.text %>
-        <%post.tags.each do |tag| %>
+        <% post.tags.each do |tag| %>
            #<%=tag.name%>
         <% end %>
         <br>

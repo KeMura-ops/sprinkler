@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def timeline # 自分自身とフォローしているユーザーの投稿を取得する
-    @posts = Post.includes(:tags).where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc)
+    @posts = Post.includes(:tags, :nices).where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc)
   end
 
   def search

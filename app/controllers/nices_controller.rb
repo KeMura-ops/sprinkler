@@ -1,24 +1,20 @@
 class NicesController < ApplicationController
+  before_action :nice_params
   before_action :authenticate_user!
 
   def create
-    @nice = current_user.nices.build(nice_params)
-    @post = @nice.post
-    if @nice.save
-      respond_to :js
-    end
+    Nice.create(user_id: current_user.id, post_id: params[:id])
+    redirect_to timeline_posts_path
   end
 
   def destroy
-    @nice = Nice.find_by(id: params[:id])
-    @post = @nice.post
-    if @like.destroy
-      respond_to :js
-    end
+    Nice.find_by(user_id: current_user.id, post_id: params[:id]).destroy
+    redirect_to timeline_posts_path
   end
 
   private
-    def nice_params
-      params.permit(:post_id)
-    end
+
+  def nice_params
+    @post = Post.find_by(id: params[:id])
+  end
 end
