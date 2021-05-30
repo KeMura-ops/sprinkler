@@ -1,4 +1,4 @@
-[![Image from Gyazo](https://i.gyazo.com/fe075ae93e22a6d95f0518f27c82c4ab.gif)](https://gyazo.com/fe075ae93e22a6d95f0518f27c82c4ab)
+<a href="https://gyazo.com/fe075ae93e22a6d95f0518f27c82c4ab"><img src="https://i.gyazo.com/fe075ae93e22a6d95f0518f27c82c4ab.gif" alt="Image from Gyazo" width="974"/></a>
 
 <h2 align="center">Sprinkler</h2>
 
