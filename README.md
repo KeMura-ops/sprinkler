@@ -1,4 +1,4 @@
-<a href="https://gyazo.com/fe075ae93e22a6d95f0518f27c82c4ab"><img src="https://i.gyazo.com/fe075ae93e22a6d95f0518f27c82c4ab.gif" alt="Image from Gyazo" width="974"/></a>
+[![Image from Gyazo](https://i.gyazo.com/ed72c8e057028356567e50c47f56ea9d.gif)](https://gyazo.com/ed72c8e057028356567e50c47f56ea9d)
 
 <h2 align="center">Sprinkler</h2>
 
