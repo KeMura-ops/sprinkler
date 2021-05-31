@@ -1,5 +1,5 @@
 ## アプリケーション概要
-[![Image from Gyazo](https://i.gyazo.com/ed72c8e057028356567e50c47f56ea9d.gif)](https://gyazo.com/ed72c8e057028356567e50c47f56ea9d)
+![ビュー](https://user-images.githubusercontent.com/76515881/120129869-ccb27200-c1ff-11eb-9f78-1c6b4f3a3757.gif)
 
 <h2 align="center">Sprinkler</h2>
 
@@ -38,10 +38,10 @@
 ### フォロー機能
 [![Image from Gyazo](https://i.gyazo.com/7c0eb815d6e73dc7afdc96fda8aa4796.gif)](https://gyazo.com/7c0eb815d6e73dc7afdc96fda8aa4796)
 ### いいね機能
-[![Image from Gyazo](https://i.gyazo.com/248a279c803417032ee099582793bf8e.gif)](https://gyazo.com/248a279c803417032ee099582793bf8e)
-以上の二つの機能はユーザーの交流を生み出すために必須の機能であると感じ、一先ずシステム面でのみ実装しました。今後はビューの部分をもっと整えて行きます。
-コメント機能など今後実装予定の機能もあります。
+![いいね機能](https://user-images.githubusercontent.com/76515881/120129156-6da02d80-c1fe-11eb-9842-f7ca03259084.gif)
+<p>以上の二つの機能はユーザーの交流を生み出すために必須の機能であると感じ、一先ずシステム面でのみ実装しました。今後はビューの部分をもっと整えて行きます。
+コメント機能など今後実装予定の機能もあります。</p>
 
 ### データベースER図
 ![Untitled Diagram](https://user-images.githubusercontent.com/76515881/120109801-f474ec00-c1a5-11eb-9fab-a3d8757bae57.png)
-以上は簡潔なデータベースのER図です。ここに記載のないテーブルがアプリケーションには存在しますので、機能追加ごとにアップデート予定です。
+<p>以上は簡潔なデータベースのER図です。機能追加ごとにデータベースのアップデートが必要であればアップデートします。</p>
