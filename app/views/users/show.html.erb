@@ -76,19 +76,21 @@
           </div>
           <div class="media-content">
             <p class="title is-4">
-              <%= link_to user_path(post.user),　title: post.user.nickname do %>
+              <%= link_to user_path(post.user), title: post.user.nickname do %>
                 <strong><%= post.user.nickname %></strong>
               <% end %>
             </p>
             <p class="subtitle is-6"><%= post.user.email %></p>
           </div>
-          <div class="media-right">
-            <% if post.user_id == current_user.id %>
-              <%= link_to post_path(post), method: :delete, class: "trash" do %>
-                <i class="fas fa-trash-alt"></i>
+          <% if user_signed_in? %>
+            <div class="media-right">
+              <% if post.user_id == current_user.id %>
+                <%= link_to post_path(post), method: :delete, class: "trash" do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
               <% end %>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         </div>
 
         <div class="content">
