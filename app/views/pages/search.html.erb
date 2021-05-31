@@ -1,0 +1,50 @@
+<% @posts.each do |post| %>
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <%= link_to(post_path(post)) do %>
+          <%= image_tag post.image.variant(resize: '500x500'), class: "card-img-top" if post.image.attached? %>
+        <% end %>
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <%= link_to user_path(post.user) do %>
+              <%= image_tag "profile.png" %>
+            <% end %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">
+            <%= link_to user_path(post.user),　title: post.user.nickname do %>
+              <strong><%= post.user.nickname %></strong>
+            <% end %>
+          </p>
+          <p class="subtitle is-6"><%= post.user.email %></p>
+        </div>
+        <% if user_signed_in? %>
+          <div class="media-right">
+            <% if post.user_id == current_user.id %>
+              <%= link_to post_path(post), method: :delete, class: "trash" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="content">
+        <%= post.text %>
+        <%post.tags.each do |tag| %>
+           #<%=tag.name%>
+        <% end %>
+        <br>
+        <time>
+          <%= link_to time_ago_in_words(post.created_at).upcase + "前", "#" %>
+        </time>
+      </div>
+    </div>
+  </div>
+<% end %>

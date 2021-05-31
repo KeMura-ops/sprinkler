@@ -11,4 +11,12 @@ class Post < ApplicationRecord
     # user_idとpost_idが一致するlikeを検索する
     Nice.find_by(user_id: user.id, post_id: id)
   end
+
+  def self.search(search)
+    if search != ""
+      Post.where('text LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
