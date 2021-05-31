@@ -10,12 +10,10 @@
     </span>
     <div class="navbar-item">
       <div class="field has-addons">
-        <div class="control">
-          <input class="input" type="text" name="search" placeholder="作品を検索">
-        </div>
-        <div class="control">
-          <a class="button is-info"><i class="fa fa-search"></i>検索</a>
-        </div>
+        <%= form_with(url: search_pages_path, local: true, method: :get, class: "input") do |form| %>
+          <%= form.text_field :keyword, placeholder: "作品を検索する" %>
+          <%= form.submit "検索", class: "button is-info" %>
+        <% end %>
       </div>
     </div>
   </div>
