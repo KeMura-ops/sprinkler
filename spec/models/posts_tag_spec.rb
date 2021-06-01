@@ -7,6 +7,7 @@ RSpec.describe PostsTag, type: :model do
     @post = FactoryBot.build(:post)
     @post.save
     @posts_tag = FactoryBot.build(:posts_tag, image: @post.image, text: @post.text, user_id: @user.id)
+    sleep 0.1 # Mysqlエラー対策のため記述
   end
 
   describe '画像とタグを投稿する' do
