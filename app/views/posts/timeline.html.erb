@@ -36,21 +36,9 @@
       </div>
 
       <div class="content">
-        <% if current_user.niced_by?(post.id) %>
-          <td>
-            <%= link_to destroy_nice_path(post), class: "nice-link", method: :DELETE do %>
-              <i class="fas fa-star unnice-btn"></i>
-          <% end %>
-          <%= post.nices.count %>
-          </td>
-        <% else %>
-          <td>
-            <%= link_to create_nice_path(post), class: "nice-link", method: :POST do %>
-                <i class="far fa-star nice-btn"></i>
-          <% end %>
-          <%= post.nices.count %>
-          </td>
-        <% end %>
+        <div id="nices_buttons_<%= post.id %>">
+          <%= render partial: 'nices/nice', locals: { post: post} %>
+        </div>
         <br>
         <%= post.text %>
         <% post.tags.each do |tag| %>
