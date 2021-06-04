@@ -1,9 +1,10 @@
 <header class="navbar">
   <div class="navbar-brand">
     <span class="navbar-item">
-      <span class="fas fa-umbrella"></span>
       <% if user_signed_in? %>
-        <%= link_to "Sprinkler", user_path(current_user) %>
+        <%= link_to user_path(current_user) do %>
+          <%= image_tag "sample_logo2.png"%>
+        <% end %>
       <% else %>
         <%= link_to "Sprinkler", new_user_session_path %>
       <% end %>
