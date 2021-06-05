@@ -3,10 +3,12 @@
     <span class="navbar-item">
       <% if user_signed_in? %>
         <%= link_to user_path(current_user) do %>
-          <%= image_tag "sample_logo2.png"%>
+          <%= image_tag "sample_b.jpg"%>
         <% end %>
       <% else %>
-        <%= link_to "Sprinkler", new_user_session_path %>
+        <%= link_to  new_user_session_path do %>
+        <%= image_tag "sample_b.jpg" %>
+        <% end %>
       <% end %>
     </span>
     <div class="navbar-item">
