@@ -18,24 +18,30 @@
   </head>
 
   <body>
-    <div id="wrapper">
-      <%# ログインアラートの表示 %>
-      <%= render 'partial/navbar' %>
+  <div id="wrapper">
+    <%# ログインアラートの表示 %>
+    <%= render 'partial/navbar' %>
 
-      <% if flash[:notice] %>
-        <div class="alert alert-info">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
-      <% if flash[:alert] %>
-        <div class="alert alert-danger">
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
-      <%# ここまで %>
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <%# ここまで %>
 
-      <%= yield %>
-      <%= render 'partial/footer' %>
-    </div>
+    <%= yield %>
+
+    <%= link_to  new_post_path, class: "post-btn" do %>
+      <span class="pots-btn-text">作品を投稿する</span>
+      <%= image_tag "post-btn.png", class: "post-btn-icon" %>
+    <% end %>
+
+    <%= render 'partial/footer' %>
+  </div>
   </body>
 </html>

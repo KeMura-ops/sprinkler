@@ -1,46 +1,39 @@
-<header class="navbar">
-  <div class="navbar-brand">
-    <span class="navbar-item">
-      <% if user_signed_in? %>
-        <%= link_to user_path(current_user) do %>
-          <%= image_tag "sample_b.jpg"%>
-        <% end %>
-      <% else %>
-        <%= link_to  new_user_session_path do %>
-        <%= image_tag "sample_b.jpg" %>
-        <% end %>
-      <% end %>
-    </span>
-    <div class="navbar-item">
-      <div class="field has-addons">
-        <%= form_with(url: search_pages_path, local: true, method: :get, class: "input") do |form| %>
-          <%= form.text_field :keyword, placeholder: "作品を検索する" %>
-          <%= form.submit "検索", class: "button is-info" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="navbar-end">
+<header class="page-header wrapper">
+
+  <h1>
     <% if user_signed_in? %>
-      <div class="navbar-item">
-        <div class="columns">
-          <div class="column">
-            <%= link_to "作品を投稿する", new_post_path, class: "button" %>
-            <%= link_to "マイページ", user_path(current_user) %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-          </div>
-        </div>
-      </div>
+      <%= link_to timeline_posts_path do %>
+        <%= image_tag "logo.png", class: "logo" %>
+      <% end %>
     <% else %>
-      <div class="navbar-item">
-        <div class="columns">
-          <div class="column">
-            <%= link_to '新規登録', new_user_registration_path %>
-            <%= link_to 'ログイン', new_user_session_path %>
-            <%= link_to '画像一覧', posts_path, method: :get %>
-          </div>
-        </div>
-      </div>
+      <%= link_to new_user_session_path do %>
+        <%= image_tag "logo.png", class: "logo" %>
+      <% end %>
     <% end %>
+  </h1>
+
+  <%= form_with(url: search_pages_path, local: true, method: :get, class: "field has-addons") do |form| %>
+    <%= form.text_field :keyword, placeholder: "作品を検索する", class: "input" %>
+    <%= form.submit "検索", class: "button is-info" %>
+  <% end %>
+
+  <nav>
+    <% if user_signed_in? %>
+      <ul class="main-nav">
+        <li><%= link_to 'タイムライン', timeline_posts_path, method: :get %></li>
+        <li><%= link_to '作品一覧', posts_path, method: :get %></li>
+        <li><%= link_to "マイページ", user_path(current_user) %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    <% else %>
+      <ul class="main-nav">
+        <li><%= link_to '作品一覧', posts_path, method: :get %></li>
+        <li><%= link_to '新規登録', new_user_registration_path %></li>
+        <li><%= link_to 'ログイン', new_user_session_path %></li>
+      </ul>
+    <% end %>
+  </nav>
+  <div id="hamburger">
+    <span></span>
   </div>
 </header>
