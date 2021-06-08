@@ -26,3 +26,11 @@ require("../tag")
   // });
 // });
 
+// ハンバーガーメニュー
+$(function() {
+  const hum = $('#hamburger, .close')
+  const nav = $('.sub-nav')
+  hum.on('click', function() {
+    nav.toggleClass('toggle');
+  });
+});
