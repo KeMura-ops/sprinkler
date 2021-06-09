@@ -19,7 +19,7 @@
             <strong><%= @post.user.nickname %></strong>
           <% end %>
         </p>
-        <p class="subtitle is-6"><%= @post.user.email %></p>
+        <p class="subtitle is-6"><%= @post.text %></p>
       </div>
       <div class="media-right">
         <% if @post.user_id == current_user.id %>
@@ -31,13 +31,15 @@
     </div>
 
     <div class="content">
-      <%= @post.text %>
+      <div id="nices_buttons_<%= @post.id %>">
+        <%= render partial: 'nices/nice', locals: { post: @post} %>
+      </div>
       <%@post.tags.each do |tag| %>
         #<%=tag.name%>
       <% end %>
       <br>
       <time>
-        <%= link_to time_ago_in_words(@post.created_at).upcase + "前", "#" %>
+        <%= time_ago_in_words(@post.created_at).upcase %>
       </time>
     </div>
   </div>

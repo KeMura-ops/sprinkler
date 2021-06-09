@@ -1,15 +1,7 @@
 <h3>New Post</h3>
-<%= link_to "New Post", new_post_path, class:"post-btn"%>
 
 <% @posts.each do |post| %>
   <div class="card">
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <%= link_to(post_path(post)) do %>
-          <%= image_tag post.image.variant(resize: '500x500'), class: "card-img-top" if post.image.attached? %>
-        <% end %>
-      </figure>
-    </div>
     <div class="card-content">
       <div class="media">
         <div class="media-left">
@@ -25,7 +17,7 @@
               <strong><%= post.user.nickname %></strong>
             <% end %>
           </p>
-          <p class="subtitle is-6"><%= post.user.email %></p>
+          <p class="subtitle is-6"><%= post.text %></p>
         </div>
         <% if user_signed_in? %>
           <div class="media-right">
@@ -37,15 +29,22 @@
           </div>
         <% end %>
       </div>
-
+    </div>
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <%= link_to(post_path(post)) do %>
+          <%= image_tag post.image.variant(resize: '500x500'), class: "card-img-top" if post.image.attached? %>
+        <% end %>
+      </figure>
+    </div>
+    <div class="card-content">
       <div class="content">
-        <%= post.text %>
         <%post.tags.each do |tag| %>
-           #<%=tag.name%>
+          #<%=tag.name%>
         <% end %>
         <br>
         <time>
-          <%= link_to time_ago_in_words(post.created_at).upcase + "前", "#" %>
+          <%= time_ago_in_words(post.created_at).upcase %>
         </time>
       </div>
     </div>
