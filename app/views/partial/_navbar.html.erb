@@ -12,10 +12,12 @@
     <% end %>
   </h1>
 
-  <%= form_with(url: search_pages_path, local: true, method: :get, class: "field has-addons") do |form| %>
-    <%= form.text_field :keyword, placeholder: "作品を検索する", class: "input" %>
-    <%= form.submit "検索", class: "button is-info" %>
-  <% end %>
+  <div class="search-bar">
+    <%= form_with(url: search_pages_path, local: true, method: :get, class: "field has-addons") do |form| %>
+      <%= form.text_field :keyword, placeholder: "作品を検索する", class: "input" %>
+      <%= form.submit "検索", class: "button is-info" %>
+    <% end %>
+  </div>
 
   <nav>
     <% if user_signed_in? %>
@@ -33,6 +35,7 @@
       </ul>
     <% end %>
   </nav>
+
   <nav class="sub-nav">
     <% if user_signed_in? %>
       <ul>
@@ -41,6 +44,12 @@
         <li><%= link_to "マイページ", user_path(current_user) %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <li class="close"><span>閉じる</span></li>
+        <li>
+          <%= form_with(url: search_pages_path, local: true, method: :get, class: "field has-addons") do |form| %>
+            <%= form.text_field :keyword, placeholder: "作品を検索する", class: "input" %>
+            <%= form.submit "検索", class: "button is-info" %>
+          <% end %>
+        </li>
       </ul>
     <% else %>
       <ul class="sub-nav">
@@ -48,9 +57,16 @@
         <li><%= link_to '新規登録', new_user_registration_path %></li>
         <li><%= link_to 'ログイン', new_user_session_path %></li>
         <li class="close"><span>閉じる</span></li>
+        <li>
+          <%= form_with(url: search_pages_path, local: true, method: :get, class: "field has-addons") do |form| %>
+            <%= form.text_field :keyword, placeholder: "作品を検索する", class: "input" %>
+            <%= form.submit "検索", class: "button is-info" %>
+          <% end %>
+        </li>
       </ul>
     <% end %>
   </nav>
+
   <div id="hamburger">
     <span></span>
   </div>

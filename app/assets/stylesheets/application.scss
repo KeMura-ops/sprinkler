@@ -17,6 +17,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+// 基本設定
 #wrapper {
   max-width: 1600px;
   margin: 0 auto;
@@ -27,6 +28,7 @@
   height: 500px;
   width :100%;
 }
+// ここまで
 
 .footer_container {
   background-color: #ffb6c1;
@@ -240,4 +242,10 @@
 .field {
   margin-top: 34px;
   margin-left: 34px;
+}
+
+@media only screen and (max-width:599px) {
+  .search-bar {
+    display: none;
+  }
 }
