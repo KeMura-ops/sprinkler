@@ -142,24 +142,24 @@
 
   #hamburger::before {
     content: '';
-   display: block;
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 2px;
-   background-color: blueviolet;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: blueviolet;
   }
 
   #hamburger::after {
     content: '';
-   display: block;
-   position: absolute;
-   bottom: 0;
-   left: 0;
-   width: 70%;
-   height: 2px;
-   background-color: royalblue;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    height: 2px;
+    background-color: royalblue;
   }
 
   .sub-nav {
@@ -220,14 +220,14 @@
 
   .sub-nav .close::after {
     content: '';
-   position: absolute;
-   top: 50%;
-   left: 0;
-   display: block;
-   width: 16px;
-   height: 1px;
-   background: royalblue;
-   transform: rotate( -45deg );
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: royalblue;
+    transform: rotate( -45deg );
   }
 
   .toggle {
@@ -240,28 +240,4 @@
 .field {
   margin-top: 34px;
   margin-left: 34px;
-}
-
-// 投稿ボタン
-.post-btn {
-  width: 150px;
-  background: whitesmoke;
-  text-align: center;
-  border-radius: 4%;
-  bottom: 32px;
-  right: 32px;
-  position: fixed;
-  padding: 15px;
-}
-
-.post-btn-text {
-  color: #fff;
-  display: block;
-  font-size: 18px;
-  text-decoration: none;
-  margin-bottom: 5px;
-}
-
-.post-btn-icon {
-  width: 100%;
 }

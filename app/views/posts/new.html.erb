@@ -7,6 +7,8 @@
         </div>
           <div class="card-body">
             <%= form_with model: @post, url: posts_path, class: "upload-images p-0 border-0", local: true do |f| %>
+            <%= render 'shared/error_messages', model: f.object %>
+            
               <div class="form-group row mt-2">
                 <div class="col-auto pr-0">
                 </div>

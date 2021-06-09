@@ -1,4 +1,4 @@
-<h3>投稿一覧</h3>
+<h3>New Post</h3>
 <%= link_to "New Post", new_post_path, class:"post-btn"%>
 
 <% @posts.each do |post| %>
@@ -51,3 +51,5 @@
     </div>
   </div>
 <% end %>
+
+<%= render 'partial/postbtn' %>
