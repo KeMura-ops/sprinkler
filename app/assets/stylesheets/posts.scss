@@ -2,6 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// タイムラインのカード
+// 投稿ボタン
+.post-btn {
+  width: 150px;
+  background: whitesmoke;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  opacity: 0.8;
+}
 
-// ここまで
+.post-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.post-btn-icon {
+  width: 100%;
+}
+
+@media only screen and (max-width:599px) {
+  .post-btn-icon {
+    display: none;
+  }
+
+  .post-btn {
+    width: 150px;
+    background: whitesmoke;
+    text-align: center;
+    border-radius: 4%;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    padding: 15px;
+    opacity: 0.8;
+  }
+  
+  .post-btn-text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+}

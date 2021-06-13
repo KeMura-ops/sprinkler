@@ -1,7 +1,17 @@
 <% if user_signed_in? %>
   <% if current_user.niced_by?(post.id) %>
-    <td><%= link_to 'ステキを外す', destroy_nice_path(post), method: :DELETE, remote: true %> <%= post.nices.count %></td>
+    <td>
+      <%= link_to destroy_nice_path(post), class: "nice-link", method: :DELETE, remote: true do %>
+        <i class="fas fa-star unnice-btn"></i>
+      <% end %>
+      <%= post.nices.count %>
+    </td>
   <% else %>
-    <td><%= link_to 'ステキ', create_nice_path(post), method: :POST, remote: true %> <%= post.nices.count %></td>
+    <td>
+      <%= link_to create_nice_path(post), class: "nice-link", method: :POST, remote: true do %>
+         <i class="far fa-star nice-btn"></i>
+      <% end %>
+      <%= post.nices.count %>
+    </td>
   <% end %>
 <% end %>

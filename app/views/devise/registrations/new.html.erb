@@ -1,19 +1,34 @@
-<div class="back-video">
-  <%= video_tag("/videos/beach.mp4", autoplay: :true, loop: :true, muted: :true, class: 'video-content') %>
-  <div class="new-form">
-    <p class="new-info">様々なクリエイターとそのイラストにアクセスしよう!</p>
-      <%= form_with scope: resource, as: resource_name, url: registration_path(resource_name), local: true do |f| %>
-        <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス" %>
-        <%= f.text_field :nickname, autofocus: true, placeholder: "ニックネーム" %>
-        <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード" %>
-        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワードの確認" %>
+<div class="new-form">
+  <p class="new-info">様々なクリエイターとそのイラストにアクセスしよう!</p>
 
-        <%= f.submit "登録する", class: "btn btn-primary w-100" %>
-      <% end %>
-      <br>
-      <p class="new-info">
-        アカウントをお持ちですか？
-        <%= link_to "サインインする", new_user_session_path %>
-      </p>
-  </div>
+  <%= form_with scope: resource, as: resource_name, url: registration_path(resource_name), local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :nickname, autofocus: true, placeholder: "ニックネーム" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワードの確認" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する", class: "btn btn-primary w-100" %>
+    </div>
+  <% end %>
+
+  <br>
+  <p class="new-info">
+    アカウントをお持ちですか？
+    <%= link_to "サインインする", new_user_session_path %>
+  </p>
 </div>
+
