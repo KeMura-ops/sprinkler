@@ -20,11 +20,14 @@ require("../tag")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-// $(function() {
-  // $('.a').slick({
-      // dots: true,
-  // });
-// });
+// スライドショー
+$(function() {
+  $('.a').slick({
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  });
+});
 
 // ハンバーガーメニュー
 $(function() {
