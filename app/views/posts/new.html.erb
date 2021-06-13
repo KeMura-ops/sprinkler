@@ -1,35 +1,24 @@
-<div class="container">
-  <div class="d-flex flex-column align-items-center mt-3">
-    <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
-      <div class="card">
-        <div class="card-header">
-          投稿画面
-        </div>
-          <div class="card-body">
-            <%= form_with model: @post, url: posts_path, class: "upload-images p-0 border-0", local: true do |f| %>
-            <%= render 'shared/error_messages', model: f.object %>
-            
-              <div class="form-group row mt-2">
-                <div class="col-auto pr-0">
-                </div>
-                <div class="col pl-0">
-                  <%= f.text_field :text, class: "form-control border-0", placeholder: "テキストを書く(空でも投稿可)" %>
-                </div>
-                <div class="col pl-0">
-                  <div class="tag-field", id='tag-field'>
-                    <%= f.text_field :name, class: "form-control border-0", placeholder: "タグを書く(必ず含める)" %>
-                  </div>
-                  <div id="search-result">
-                  </div>
-                </div>
-              </div>
-              <div class="mb-3">
-                <%= f.file_field :image %>
-              </div>
-              <%= f.submit "投稿する", class: "btn btn-primary" %>
-            <% end %>
-          </div>
-      </div>
+<h3>Post Screen</h3>
+
+<div class="main">
+  <%= form_with model: @post, url: posts_path, class: "upload-images p-0 border-0", local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="form-group">
+      <%= f.text_field :text, placeholder: "テキスト" %>
     </div>
-  </div>
+
+    <div class="form-group">
+      <div class="tag-field", id='tag-field'>
+        <%= f.text_field :name, placeholder: "タグ ※必須" %>
+      </div>
+      <div id="search-result"></div>
+    </div>
+
+    <div class="form-group">
+      <%= f.file_field :image %>
+    </div>
+
+    <%= f.submit "投稿する", class: "btn btn-primary" %>
+  <% end %>
 </div>
