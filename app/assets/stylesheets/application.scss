@@ -25,39 +25,9 @@
 }
 
 // スライドショー
-.c{
+.c {
   height: 100%;
   width : 100%;
-}
-
-// フッター仮
-.footer_container {
-  background-color: #ffb6c1;
-  height: 30px;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-}
-
-.item-contents {
-  display: flex;
-}
-
-.item-content {
-  margin-left: 5px;
-}
-
-.copy-right {
-  color: #8a2be2;
-}
-
-.git-hub {
-  color: #8a2be2;
-}
-
-.note {
-  color: #8a2be2;
 }
 
 // ヘッダー
@@ -230,5 +200,81 @@
 @media only screen and (max-width:599px) {
   .search-bar {
     display: none;
+  }
+}
+
+// フッター
+#footer2 {
+  position: relative;
+  background: url(footer-sec.jpg) no-repeat center / cover;
+  padding: 1.5rem 1.5rem 1.5rem;
+}
+
+#footer2 .main .left {
+  background-color: aliceblue;
+  padding: 50px 40px;
+  opacity: 0.8;
+}
+
+#footer2 .main .logo {
+  margin: 0 auto;
+}
+
+#footer2 .main .kojiro-img {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#footer2 .main h4 {
+  font-weight: bold;
+}
+
+#footer2 .main .info {
+  color: rgb(68, 66, 66);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#footer2 .main .right {
+  background: aliceblue;
+  padding: 50px 40px;
+  opacity: 0.8;
+}
+
+.footer-nav01 ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-nav01 li {
+  padding-left: 15px;
+  font-size: 45px;
+}
+
+.git-hub {
+  color: black;
+}
+
+.note {
+  color: black;
+}
+
+@media screen and (min-width: 641px) {
+  #footer2 .main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  #footer2 .main .left {
+    width: 50%;
+  }
+
+  #footer2 .main .right {
+    width: 50%;
   }
 }

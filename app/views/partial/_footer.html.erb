@@ -1,17 +1,59 @@
-<div class="footer_container">
-  <div class="item-contents">
-    <div class="copy-right">
-      © Sprinkler
+<footer id="footer2" class="footer outer-black">
+  <div class="main">
+    <div class="left">
+      <div class="footer-contents">
+        <div class="logo">
+          <%= image_tag "logo.png" %>
+        </div>
+        <h4>スプリンクラー(Sprinkler)は、イラスト初心者のための新しいSNSプラットフォームです。</h4>
+        <p class="info">
+          イラスト初心者の方でも気軽に作品投稿が出来る新しいSNSです。
+          他のイラスト初心者さんと交流を深めることが出来たり、タグを検索して
+          簡単に作品を探せたりすることも出来ます。全て無料で利用可能です。
+          誰でも簡単に新しいお絵かきライフを始められます。
+        </p>
+      </div>
+      <div class="footer-nav01">
+        <ul>
+          <li>
+            <%= link_to "https://github.com/KeMura-ops", class: "git-hub" do %>
+              <i class="fab fa-github-square"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "https://note.com/become_engineer", class: "note" do %>
+              <i class="fas fa-book-open"></i>
+            <% end %>
+          </li>
+        </ul>
+      </div> 
     </div>
-    <div class="item-content">
-      <%= link_to "https://github.com/KeMura-ops", class: "git-hub" do %>
-        <i class="fab fa-github-alt"></i>
-      <% end %>
-    </div>
-    <div class="item-content">
-      <%= link_to "https://note.com/become_engineer", class: "note" do %>
-        <i class="fas fa-book-open"></i>
-      <% end %>
+    <div class="right">
+      <div class="footer-contens">
+          <h4>All of the illustrations and logo design were written by Kojiro Oka.(岡 虎次郎)</h4>
+        <div class="kojiro-img">
+          <%= image_tag "kojiro-img.jpg", :size =>'100x100' %>
+        </div>
+        <p class="info">
+          このサイトで使用されているイラストレーションは、
+          一部を除き全て岡虎次郎氏の許諾を得て使用させて頂いています。
+          またロゴデザインは同氏によってデザイン、作成されました。
+        </p>
+      </div>
+      <div class="footer-nav01">
+        <ul>
+          <li>
+            <%= link_to "https://www.pixiv.net/users/62951419", class: "pixiv" do %>
+              <%= image_tag "logo_icon.jpg", :size => "36x36" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "https://twitter.com/oka_kojiro10", class: "twitter" do %>
+              <i class="fab fa-twitter-square"></i>
+            <% end %>
+          </li>
+        </ul>
+      </div> 
     </div>
   </div>
-</div>
+</footer>
