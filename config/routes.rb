@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resource :follow
     resources :followings
     resources :followers
+    resources :nices, only: [:index]
   end
 
   post 'nice/:id' => 'nices#create', as: 'create_nice'

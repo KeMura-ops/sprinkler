@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword])
+    @posts = Post.includes(:tags).search(params[:keyword])
   end
 
 end

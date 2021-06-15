@@ -28,7 +28,9 @@
   <footer class="card-footer">
     <%= link_to 'フォロー',  [@user, :followings], class: "card-footer-item" %>
     <%= link_to 'フォロワー',  [@user, :followers], class: "card-footer-item" %>
-    <a href="#" class="card-footer-item"><i class="far fa-star nice-btn"></i></a>
+    <%= link_to [@user, :nices], class: "card-footer-item" do %>
+      <i class="far fa-star unnice-btn"></i>
+    <% end %>
   </footer>
 </div>
 
