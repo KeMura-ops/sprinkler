@@ -1,5 +1,35 @@
 <% @followers.each do |user| %>
- <div>
-   <%= link_to user.email, [user] %>
- </div>
+  <div class="card">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <%= image_tag "profile.png", class: "round-img" %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4"><%= link_to user.nickname, [user] %></p>
+          <p class="subtitle is-6">SampleBio</p>
+        </div>
+        <div class="media-right">
+          <% if user == current_user %>
+            <%= link_to "プロフィールを編集", edit_user_registration_path, class: "button is-info" %>
+          <% else %>
+            <% if user_signed_in? && current_user != @user %>
+              <% if current_user.active_relationships.exists?(target_user_id: user.id) %>
+                <%= link_to 'フォロー解除', [user, :follow], method: :delete, class: "button is-info" %>
+              <% else %>
+                <%= link_to 'フォローする', [user, :follow], method: :post, class: "button is-info" %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <%= link_to 'フォロー',  [user, :followings], class: "card-footer-item" %>
+      <%= link_to 'フォロワー',  [user, :followers], class: "card-footer-item" %>
+    </footer>
+  </div>
 <% end %>
+
