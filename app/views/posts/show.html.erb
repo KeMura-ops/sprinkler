@@ -43,6 +43,38 @@
       <time>
         <%= time_ago_in_words(@post.created_at).upcase %>
       </time>
+      <p>
+        <h6>コメント一覧(コメントには新規登録/ログインが必須)</h6>
+      </p>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.comment %>
+          <% if user_signed_in? %>
+            <% if comment.user_id == current_user.id %>
+              <%= link_to [@post, comment], method: :delete, class: "trash" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <% if user_signed_in? %>
+        <label class="label">Message</label>
+        <%= form_with(model: [@post, @comment], local: true) do |f| %>
+          <div class="control">
+            <%= f.text_field :comment, placeholder: "コメントする", class: "input is-rounded" %>
+          </div>
+          <div class="field is-grouped is-grouped-right">
+            <p class="control">
+              <%= f.submit "送信", class: "button is-info"%>
+            </p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
