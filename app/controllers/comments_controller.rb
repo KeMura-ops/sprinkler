@@ -3,7 +3,19 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.create(comment_params)
-    redirect_to "/posts/#{comment.post.id}"
+
+    if comment.save
+      redirect_to "/posts/#{comment.post.id}"
+    else
+      render "posts/show"
+    end
+  end
+
+  def destroy
+    comment = current_user.comments.find(params[:id])
+    comment.destroy
+
+    redirect_to post_path(params[:post_id])
   end
 
   private

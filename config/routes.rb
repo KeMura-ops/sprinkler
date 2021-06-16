@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:index, :new, :create, :show, :destroy ] do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
     resources :nices, only: [:create, :destroy]
     collection do
       get 'search'
