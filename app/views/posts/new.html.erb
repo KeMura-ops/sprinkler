@@ -22,7 +22,9 @@
 
     <div class="field">
       <div class="control">
-        <%= f.file_field :image %>
+        <%= f.file_field :image, id:"post-image" %>
+        <h3>Image Preview</h3>
+        <div id="image-list"></div>
       </div>
     </div>
 
