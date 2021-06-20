@@ -25,12 +25,12 @@ RSpec.describe PostsTag, type: :model do
       it 'タグが存在しなければ投稿できない' do
         @posts_tag.name = nil
         @posts_tag.valid?
-        expect(@posts_tag.errors.full_messages).to include("Name can't be blank")
+        expect(@posts_tag.errors.full_messages).to include("タグを入力してください")
       end
       it '画像が存在しなければ投稿ができない' do
         @posts_tag.image = nil
         @posts_tag.valid?
-        expect(@posts_tag.errors.full_messages).to include("Image can't be blank")
+        expect(@posts_tag.errors.full_messages).to include("作品(画像)を入力してください")
       end
     end
   end

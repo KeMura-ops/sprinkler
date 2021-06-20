@@ -18,12 +18,12 @@ RSpec.describe Post, type: :model do
         it '画像が存在しない場合、投稿できない' do
           @post.image = nil
           @post.valid?
-          expect(@post.errors.full_messages).to include("Image can't be blank")
+          expect(@post.errors.full_messages).to include("Imageを入力してください")
         end
         it 'ユーザーが紐づいていなければ投稿できない' do
           @post.user = nil
           @post.valid?
-          expect(@post.errors.full_messages).to include("User must exist")
+          expect(@post.errors.full_messages).to include("Userを入力してください")
         end
       end
     end
