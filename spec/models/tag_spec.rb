@@ -14,7 +14,7 @@ RSpec.describe Tag, type: :model do
       it 'タグ(name)の入力がない場合' do
         @tag.name = nil
         @tag.valid?
-        expect(@tag.errors.full_messages).to include("Name can't be blank")
+        expect(@tag.errors.full_messages).to include("Nameを入力してください")
       end
     end
   end

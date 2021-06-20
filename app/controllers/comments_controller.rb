@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
     comment = Comment.create(comment_params)
 
     if comment.save
-      redirect_to "/posts/#{comment.post.id}"
+      redirect_to "/posts/#{comment.post.id}", notice: 'コメントに成功しました'
     else
-      render "posts/show"
+      redirect_to post_path(params[:post_id]), notice: 'コメントに失敗しました'
     end
   end
 
