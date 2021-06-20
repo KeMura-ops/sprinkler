@@ -4,21 +4,32 @@
   <%= form_with model: @post, url: posts_path, class: "upload-images p-0 border-0", local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
 
-    <div class="form-group">
-      <%= f.text_field :text, placeholder: "テキスト" %>
+  <div class="field">
+  <label class="label">Text</label>
+    <div class="control">
+      <%= f.text_field :text, placeholder: "テキスト(空欄でも投稿可能です)", class: "input is_info" %>
     </div>
+  </div>
 
-    <div class="form-group">
+  <div class="field">
+  <label class="label">Tag</label>
+    <div class="control">
       <div class="tag-field", id='tag-field'>
-        <%= f.text_field :name, placeholder: "タグ ※必須" %>
+        <%= f.text_field :name, placeholder: "タグ(必ず入力してください)", class: "input is_info" %>
       </div>
       <div id="search-result"></div>
     </div>
 
-    <div class="form-group">
-      <%= f.file_field :image %>
+    <div class="field">
+      <div class="control">
+        <%= f.file_field :image %>
+      </div>
     </div>
 
-    <%= f.submit "投稿する", class: "btn btn-primary" %>
+    <div class="field is-grouped is-grouped-right">
+      <div class="control">
+        <%= f.submit "投稿する", class: "button is-info" %>
+      </div>
+    </div>
   <% end %>
 </div>

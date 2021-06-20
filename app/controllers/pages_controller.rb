@@ -5,5 +5,4 @@ class PagesController < ApplicationController
   def search
     @posts = Post.includes(:tags).search(params[:keyword])
   end
-
 end
