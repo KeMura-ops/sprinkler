@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+
+  activemodel:
+   attributes:
+      posts_tag:
+        text: テキスト
+        name: タグ
+        image: 作品(画像)
