@@ -15,7 +15,8 @@ class Post < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Post.where('text LIKE(?)', "%#{search}%")
+      # joins(:関連名)で関連するモデルのカラムでの検索を可能にする
+      Post.joins(:tags).where('name LIKE(?)', "%#{search}%")
     else
       Post.all
     end
