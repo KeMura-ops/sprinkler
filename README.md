@@ -60,7 +60,7 @@
 <p>今後はユーザー同士で直接やりとりが出来るダイレクトメッセージ機能と、フォローやいいねされた場合に通知が送られる通知機能を実装出来ればしていきたいです。またユーザーのプロフィール画像も自由に変更出来れば良いのではないかと感じています。</p>
 
 ### 使用ツール
-HTML, CSS, jQuery, bulma, Font Awesome, Ruby, Ruby on Rails, MySQL, Heroku, Amazon Web Services S3
+HTML, CSS, jQuery, bulma, Font Awesome, Ruby, Ruby on Rails, MySQL, Heroku, AWS S3
 
 ### Special Thanks
 <p>イラストレーションとロゴデザインの提供、作成は岡 虎次郎氏によるものです。この度はありがとうございました。</p>
