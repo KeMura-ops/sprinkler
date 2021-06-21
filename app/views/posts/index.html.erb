@@ -44,7 +44,7 @@
         <% end %>
         <br>
         <time>
-          <%= time_ago_in_words(post.created_at).upcase %>
+          <%= time_ago_in_words(post.created_at).upcase + "前" %>
         </time>
       </div>
     </div>
