@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def search
-    @posts = Post.includes(:tags).search(params[:keyword])
+    @posts = Post.includes(:tags).search(params[:keyword]).order(created_at: :desc)
   end
 end
