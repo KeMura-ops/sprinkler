@@ -1,4 +1,5 @@
 ## アプリケーション概要
+#### ※Gifが表示されていない箇所が複数ありますので、お手数ですがリンク先で挙動をご確認下さい。
 <a href="https://gyazo.com/bec45f1856abfd6f8e50601f1598725c"><img src="https://i.gyazo.com/bec45f1856abfd6f8e50601f1598725c.gif" alt="Image from Gyazo" width="1000"/></a>
 <h2 align="center">Sprinkler</h2>
 
