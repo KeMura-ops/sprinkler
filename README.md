@@ -51,7 +51,7 @@
 
 ### タグのインクリメンタルサーチと画像プレビュー機能
 <a href="https://gyazo.com/6ff56984027879783c636eed99575f9d"><img src="https://i.gyazo.com/6ff56984027879783c636eed99575f9d.png" alt="Image from Gyazo" width="1050"/></a>
-<p>作品の投稿を便利なものにするために、タグのインクリメンタルサーチと投稿画像のプレビュー機能をJava Scriptを用いて非同期で実装しました。「Tag」に「t」と入力した段階で下に「test」というあらかじめデータベースに登録されてある「タグ」を検索候補として表示させています。そして投稿する画像ファイルを選択した段階でプレビューできるようにしています。これにより投稿する画像の間違いを防ぐことができます。</p>
+<p>作品の投稿を便利なものにするために、タグのインクリメンタルサーチと投稿画像のプレビュー機能をJavaScriptを用いて非同期で実装しました。「Tag」に「t」と入力した段階で下に「test」というあらかじめデータベースに登録されてある「タグ」を検索候補として表示させています。そして投稿する画像ファイルを選択した段階でプレビューできるようにしています。これにより投稿する画像の間違いを防ぐことができます。</p>
 
 ### データベースER図
 <a href="https://gyazo.com/75505feb14e52398bb3bcff35874b32f"><img src="https://i.gyazo.com/75505feb14e52398bb3bcff35874b32f.png" alt="Image from Gyazo" width="536"/></a>
@@ -61,7 +61,7 @@
 <p>今後はユーザー同士で直接やりとりが出来るダイレクトメッセージ機能と、フォローやいいねされた場合に通知が送られる通知機能を実装出来ればしていきたいです。またユーザーのプロフィール画像も自由に変更出来れば良いのではないかと感じています。</p>
 
 ### 使用ツール
-HTML, CSS, jQuery, bulma, Font Awesome, Ruby, Ruby on Rails, MySQL, Heroku, AWS S3
+HTML, CSS,JavaScript, jQuery, bulma, Font Awesome, Ruby, Ruby on Rails, MySQL, Heroku, AWS S3
 
 ### Special Thanks
 <p>イラストレーションとロゴデザインの提供、作成は岡 虎次郎氏によるものです。この度はありがとうございました。</p>
